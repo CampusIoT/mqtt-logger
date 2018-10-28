@@ -67,7 +67,7 @@ mqtt-logger was written by:
 
 * **Didier Donsez** | [GitHub](https://github.com/donsez/)
 * With contributions from:
- * [Vivien Quéma](https://github.com/vquema)
+ * [Vivien Quéma](https://github.com/quema)
 
 License: [EPLv2](https://www.eclipse.org/legal/epl-2.0/)
 
@@ -77,3 +77,4 @@ Contact: Didier Donsez
 
 ## Bonus track
 * https://github.com/nicolsc/sigfox-callback-demo
+* https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html
