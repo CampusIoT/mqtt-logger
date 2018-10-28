@@ -54,6 +54,13 @@ are most likely too restrictive.
     cd mqtt-logger
     docker build -f Dockerfile -t campusiot/mqtt-logger:latest .
 
+    # For saving the container image
+    mkdir -p ~/docker-images
+    docker save campusiot/mqtt-logger:latest | gzip > ~/docker-images/mqtt-logger.tgz
+
+    # For loading the saved container image
+    gunzip -c ~/docker-images/mqtt-logger.tgz | docker load
+
 ## Authors and license
 
 mqtt-logger was written by:
