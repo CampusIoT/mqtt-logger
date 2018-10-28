@@ -2,7 +2,7 @@
 
 * https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html
 Warning
-* The AppID is not the AppEUI
+* The AppID is not the AppEUI but the symbolic name
 * The AppKey should start by ttn-account-v2.
 
 ## Build and Run
