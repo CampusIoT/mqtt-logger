@@ -1,0 +1,39 @@
+{
+  "id": "mqtt-logger-__INSTANCE_ID__",
+  "name": "MQTT Logger #__INSTANCE_ID__",
+
+  "env": "__CLUSTER_NAME__",
+
+  "loglevel": {
+    "error" : true,
+    "info" : false,
+    "debug" : false
+  },
+
+  "mqtt": [
+     {
+      "name" : "MQTT 1 __CLUSTER_NAME__",
+      "mqttClientUrl": "mqtt://mqtt-1",
+      "mqttClientIdPrefix": "campusiot",
+      "mqttTopic": "#",
+      "mqttOptions": {
+        "username": "0",
+        "password": "__MQTT_ADMIN_PASSWORD__",
+        "keepalive": 60,
+        "reconnectPeriod": 10000
+      }
+    },
+    {
+      "name" : "MQTT 2 __CLUSTER_NAME__",
+      "mqttClientUrl": "mqtt://mqtt-2",
+      "mqttClientIdPrefix": "campusiot",
+      "mqttTopic": "#",
+      "mqttOptions": {
+        "username": "0",
+        "password": "__MQTT_ADMIN_PASSWORD__",
+        "keepalive": 60,
+        "reconnectPeriod": 10000
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "mqtt-logger",
+  "version": "0.1.0",
+  "description": "Simple MQTT Logger.",
+  "private": true,
+  "keywords": [
+    "mqtt"
+  ],
+  "main": "app.js",
+  "dependencies": {
+    "mqtt": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js >> /data/msg.log"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CampusIoT/loraserver-docker.git"
+  },
+  "author": "CampusIoT, Didier Donsez, Vivien Quéma",
+  "license": "EPLv2.0",
+  "homepage": "https://github.com/CampusIoT/loraserver-docker/tree/master/docker/mqtt-logger"
+}
