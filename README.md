@@ -48,6 +48,18 @@ Now it can be attached to docker by using `-v mqtt_logger_data:/data` in the
 Example above. Be aware that the permissions within the volumes
 are most likely too restrictive.
 
+## Running with Docker Compose
+
+    mkdir -p ~/configuration/mqtt-logger/
+    mkdir -p ~/data/mqtt-logger/
+    cp ./settings.json ~/configuration/mqtt-logger/
+    docker-compose -f docker-compose.yml up
+
+    docker exec -it mqtt-logger_mqtt-logger_1 /usr/bin/tail -f /data/msg.log
+    
+    mosquitto_pub -h test.mosquitto.org -t campusiot/test \
+      -m '{"deveui":"0123456789abcdef","temperature":25.6,"batteryLevel":95}'
+
 ## Build
 
     git clone https://github.com/campusiot/mqtt-logger.git

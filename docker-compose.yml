@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  mqtt-logger:
+    build:
+      context: .
+    image: campusiot/mqtt-logger:latest
+#    links:
+#      - mqtt-1:moquitto
+    volumes:
+      - ~/data/mqtt-logger:/data:rw
+      - ~/configuration/mqtt-logger/settings.json:/usr/src/app/settings.json:ro
+    restart: unless-stopped
