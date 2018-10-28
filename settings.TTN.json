@@ -1,0 +1,41 @@
+{
+  "id": "mqtt-logger-ttn",
+  "name": "MQTT Logger #1",
+
+  "env": "CampusIoT",
+
+  "loglevel": {
+    "error" : true,
+    "info" : false,
+    "debug" : false
+  },
+
+  "mqtt": [
+     {
+      "name" : "MQTT TTN EU UNSECURED",
+      "mqttClientUrl": "mqtt://eu.thethings.network",
+      "mqttClientIdPrefix": "campusiot",
+      "mqttTopic": "+/devices/+/up",
+      "mqttOptions": {
+        "username": "adeunisdemomote",
+        "password": "ttn-account-v2.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "keepalive": 60,
+        "reconnectPeriod": 10000
+      }
+    },
+    {
+     "name" : "MQTT TTN EU TLS",
+     "mqttClientUrl": "mqtt://eu.thethings.network",
+     "mqttClientIdPrefix": "campusiot-tls",
+     "mqttTopic": "+/devices/+/up",
+     "mqttOptions": {
+       "username": "adeunisdemomote",
+       "password": "ttn-account-v2.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+       "rejectUnauthorized": true,
+       "ca": "mqtt-ca.pem",
+       "keepalive": 60,
+       "reconnectPeriod": 10000
+     }
+   }
+  ]
+}

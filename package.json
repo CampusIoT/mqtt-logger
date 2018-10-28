@@ -8,12 +8,14 @@
   ],
   "main": "app.js",
   "dependencies": {
-    "mqtt": "^1.14.1"
+    "fs": "0.0.1-security",
+    "mqtt": "^1.14.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js >> /data/msg.log"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

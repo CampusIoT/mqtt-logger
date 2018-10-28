@@ -38,14 +38,32 @@ function createMqttClient(cfg) {
 
   var mqttTopic = cfg.mqttTopic;
 
+  // BEGIN TLS-related options
+  var fs = require('fs')
+  var path = require('path')
+
+  var mqttOptions = cfg.mqttOptions;
+
+  if(mqttOptions.key) {
+    mqttOptions.key = fs.readFileSync(mqttOptions.key);
+  }
+  if(mqttOptions.cert) {
+    mqttOptions.cert = fs.readFileSync(mqttOptions.cert);
+  }
+  if(mqttOptions.ca) {
+    mqttOptions.ca = fs.readFileSync(mqttOptions.ca);
+  }
+  // END TLS-related options
+
   var s = (new Date).getTime();
   var mqttClientId = cfg.mqttClientIdPrefix + Math.floor(Math.random(s) * (9999999 - 1111111 + 1) + 1111111);
-  cfg.mqttOptions.clientId=mqttClientId;
+  mqttOptions.clientId=mqttClientId;
 
   // Connect to the MQTT broker.
   console.log(Date.now()+",MQTT:CONNECTING,"+cfg.name);
 
-  var mqttClient = mqtt.connect(cfg.mqttClientUrl, cfg.mqttOptions);
+
+  var mqttClient = mqtt.connect(cfg.mqttClientUrl, mqttOptions);
 
   mqttClient.on("message",
       function (topic, message, mqttpacket) {
@@ -65,7 +83,7 @@ function createMqttClient(cfg) {
 
   mqttClient.on("error",
     function (error) {
-      console.log(Date.now()+",MQTT:ERROR,"+cfg.name);
+      console.log(Date.now()+",MQTT:ERROR,"+cfg.name+","+error);
     }
   );
 
