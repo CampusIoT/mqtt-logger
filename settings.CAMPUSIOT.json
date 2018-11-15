@@ -17,7 +17,7 @@
       "mqttClientIdPrefix": "campusiot",
       "mqttTopic": "#",
       "mqttOptions": {
-        "username": "0",
+        "username": "mqtt-logger",
         "password": "__SUPER_SECRET_TO_CHANGE__",
         "keepalive": 60,
         "reconnectPeriod": 10000

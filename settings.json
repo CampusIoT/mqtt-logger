@@ -12,11 +12,13 @@
 
   "mqtt": [
      {
-      "name" : "MQTT TEST MOSQUITTO",
-      "mqttClientUrl": "mqtt://test.mosquitto.org",
+      "name" : "MQTT 1 CampusIoT",
+      "mqttClientUrl": "mqtt://lora.campusiot.imag.fr",
       "mqttClientIdPrefix": "campusiot",
-      "mqttTopic": "campusiot/#",
+      "mqttTopic": "#",
       "mqttOptions": {
+        "username": "mqtt-logger",
+        "password": "__SUPER_SECRET_TO_CHANGE__",
         "keepalive": 60,
         "reconnectPeriod": 10000
       }
