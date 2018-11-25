@@ -1,2 +1,2 @@
 #!/bin/bash
-node app.js &>> msg.log
+node app.js &>> /data/msg.log
